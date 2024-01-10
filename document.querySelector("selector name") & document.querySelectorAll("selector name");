@@ -61,7 +61,7 @@ const fruitItems = document.querySelectorAll(".fruit");
 
 for (let i = 0; i < fruitItems.length; i++) {
   // Styling in case of even indices
-  if (i % 2 !== 0) {
+  if (i % 2 === 0) {
     fruitItems[i].style.backgroundColor = "red";
     fruitItems[i].style.color = "white";
   } else {
