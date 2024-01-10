@@ -1,0 +1,72 @@
+[note: queryselector is used to grab only a single element and leaves the rest -> suppose there are for elemnts of the same class this method will only select one of this element and leave the
+rest.
+--> So this method is used in cases when you want to select the 1st elements our of many or if you want to select a particular element or a uinque element
+]
+Note when we are using queryselector and we need to pick an element with a ID so we also need to append a-> "#" before the id name inside our method 
+Note when we are using queryselector and we need to pick an element with a CLASS so we also need to append a-> "." before the class name inside our method 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[note: querySelectorAll is used to grab all of the elements with our desired selector -> Remember this method can be used a replacement of getElementById and getElementsByClassName methods as 
+unlike them this document.querySelectorAll("selector name") method returns a node of all the elements that have the same selector AND ---> ALSO UNLIKE OTHER METHODS 
+WE CAN USE ARRAY METHODS ON THIS SELECTOR LIKE PUSH , POP , SORT , FILTER , REVERSE ]
+
+*************************************************************************************************************************************************************************************************
+# JavaScript Task: Using querySelector & querySelectorAll
+
+## Question Statement-> :
+
+1. Implement the code as shown in the video.
+2. Use id as a query to select the basket heading and set its color to brown.
+3. Change the background color of even fruit items to red and change their text color to white.
+
+## HTML Code:
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="margin: 0">
+    <div id="header" style="padding: 1rem 0; background-color: lightblue">
+      <h1 id="main-heading" style="margin: 0">Fruit Shop</h1>
+    </div>
+    <div>
+      <h2 id="basket-heading">Fruits In Basket</h2>
+      <ul class="fruits">
+        <li class="fruit">Banana</li>
+        <li class="fruit">Apple</li>
+        <li class="fruit">Orange</li>
+        <li class="fruit">Kiwi</li>
+      </ul>
+    </div>
+    <div id="thanks"></div>
+  </body>
+  <script src="index.js"></script>
+</html>
+
+----------------------------------------------------------------------->
+Solution->
+// Write the code as shown in the video below:
+document.querySelector("#basket-heading").style.color = "brown";
+
+// Selecting a CLASS using querySelector
+document.querySelector(".fruits").style.backgroundColor = "grey";
+
+// Using document.querySelectorAll to apply styles based on given conditions
+const fruitItems = document.querySelectorAll(".fruit");
+
+for (let i = 0; i < fruitItems.length; i++) {
+  // Styling in case of even indices
+  if (i % 2 !== 0) {
+    fruitItems[i].style.backgroundColor = "red";
+    fruitItems[i].style.color = "white";
+  } else {
+    // Styling in case of odd indices
+    fruitItems[i].style.backgroundColor = "white";
+  }
+}
+
